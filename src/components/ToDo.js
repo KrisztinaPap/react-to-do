@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function ToDo () 
 {
+    const [ newTask, setNewTask ] = useState( '' );
+
     return (
         <>
             <form>
                 <label htmlFor="task">New Task:</label>
-                <input type="text" id="task" />
+                <input 
+                    type="text" 
+                    id="task" 
+                    onChange={e => { setNewTask( e.target.value ) } } 
+                    value={ newTask } 
+                />
                 <input type="submit" value="Add To-Do" />
             </form>
             <ul></ul>
