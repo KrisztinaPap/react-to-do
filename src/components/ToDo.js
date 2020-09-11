@@ -8,11 +8,18 @@ function ToDo ()
         { task: "Buy milk" },
         { task: "Learn React" },
         { task: "Find out what Redux is" }
-    ].map( (toDo, index) => <li key={index}>{toDo.task}</li> ) );
+    ] );
+
+const addNewTask = event => {
+    event.preventDefault();
+    const newToDosList = [...toDos];
+    newToDosList.push( { task: newTask } );
+    setToDos( newToDosList );
+}
 
     return (
         <>
-            <form>
+            <form onSubmit={ addNewTask }>
                 <label htmlFor="task">New Task:</label>
                 <input 
                     type="text" 
@@ -26,7 +33,7 @@ function ToDo ()
                 </p>
                 <input type="submit" value="Add To-Do" />
             </form>
-            <ul>{toDos}</ul>
+            <ul>{toDos.map( (toDo, index) => <li key={index}>{toDo.task}</li> )}</ul>
         </>
     );
 }
