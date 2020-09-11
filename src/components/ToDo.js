@@ -15,6 +15,7 @@ const addNewTask = event => {
     const newToDosList = [...toDos];
     newToDosList.push( { task: newTask } );
     setToDos( newToDosList );
+    setNewTask( '' ); // Clear input field
 }
 
     return (
