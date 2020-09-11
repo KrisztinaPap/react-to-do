@@ -14,6 +14,10 @@ function ToDo ()
                     onChange={e => { setNewTask( e.target.value ) } } 
                     value={ newTask } 
                 />
+                <p>
+                    <strong>Current Task Value:</strong>
+                    <em> {newTask}</em>
+                </p>
                 <input type="submit" value="Add To-Do" />
             </form>
             <ul></ul>
